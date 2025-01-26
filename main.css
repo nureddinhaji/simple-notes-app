@@ -1,0 +1,350 @@
+/* Reset CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+fieldset {
+    border: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* === End Reset CSS === */
+
+/* Variables */
+
+:root {
+    --main-color: #EC7160;
+    --dark-text-color: #303030;
+    --light-text-color: #898989;
+    --border-color: #E7E7E9;
+    --background-color: #F6F6F6;
+}
+
+/* === End Variables === */
+
+
+/* Common CSS */
+
+body {
+    font-family: "Inter", serif;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex: 1;
+}
+
+
+/* Main Menu Css */
+.mHeader {
+    display: none;
+}
+
+.menu {
+    padding-block: 41px;
+    padding-inline: 24px;
+    background-color: var(--background-color);
+    border-inline-start: 2px solid var(--border-color);
+}
+.menu_close {
+    display: none;
+}
+.menu_title {
+    margin-bottom: 57px;
+}
+.menu_title a {
+    font-size: 15px;
+    font-family: "Aclonica", serif;
+    color: var(--main-color);
+    font-weight: 400;
+}
+.menu_search {
+    width: 100%;
+    background-color: white;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    gap: 6px;
+    color: var(--light-text-color);
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 35px;
+}
+
+.menu_search_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+}
+
+.menu_search_input {
+    flex: 1;
+}
+
+.menu_list {
+    display: flex;
+    flex-direction: column;
+}
+.menu_list_item {
+    color: var(--light-text-color);
+    line-height: 27px;
+    cursor: pointer;
+    padding-inline-start: 12px;
+    border-inline-start: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.menu_list_item--active {
+    border-inline-start-color: var(--main-color) ;
+    color: var(--dark-text-color);
+}
+
+.menu_list_item:hover {
+    color: var(--dark-text-color);
+}
+/* == Main Menu Css == */
+
+/* Notes CSS */
+
+.notes {
+    border-inline-end: 1px solid var(--border-color);
+    padding-block: 38px;
+    width: 20px;
+    position: relative;
+    max-width: 322px;
+    transition: width 0.6s;
+}
+
+.notes--open {
+    width: 100%;
+}
+
+.notes_pinned {
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.notes_pinned, .notes_normal {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+}
+.notes--open .notes_pinned,.notes--open .notes_normal {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.notes_title {
+    font-size: 13px;
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 20px;
+    padding-inline: 28px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+}
+
+.notes_normal .notes_title {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 13px;
+}
+
+.notes_items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-inline: 12px;
+}
+
+.notes_item {
+    padding: 11px 16px 6px;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+    font-weight: 400;
+    color: var(--light-text-color);
+    font-size: 13px;
+    line-height: 20px;
+}
+
+
+.notes_item--active, .notes_item:not(.no_result):hover {
+    background-color: var(--background-color);
+}
+
+.notes_item_title {
+    font-size: 16px;
+    color: var(--dark-text-color);
+    line-height: 27px;
+}
+
+.notes_item_footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+
+.notes_item_date {
+    color: var(--light-text-color);
+}
+
+.notes_item_delete {
+    color: var(--main-color);
+}
+
+.toggle_notes_lis {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 130px;
+    right: 0;
+    transform: translateX(+50%);
+    background-color: white;
+}
+
+.toggle_notes_lis svg {
+    transition: 0.6s;
+}
+
+
+.toggle_notes_lis:not(.notes--open .toggle_notes_lis) svg {
+    transform: rotate(180deg);
+}
+
+/* Add New Note Button */
+
+.add_new_note {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 25px;
+    inset-inline-end: 25px;
+    transition: opacity 0.3s;
+}
+
+.add_new_note:hover {
+    opacity: 0.8;
+}
+
+
+
+/* Responsive */
+
+@media (max-width: 980px) {
+    .main {
+        flex-direction: column;
+        transition: transform 0.4s ease-in-out;
+    }
+    .main_menu_open {
+        transform: translateX(203.36px);
+    }
+    .mHeader {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 34px;
+        transition: 0.3s;
+    }
+    .mHeader_search_open {
+        background-color: var(--background-color);
+    }
+    .mMenu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .mMenu_title {
+        line-height: 17px;
+    }
+    .mMenu_title a {
+        color: var(--main-color);
+        font-weight: 400;
+        font-size: 15px;
+        font-family:  "Aclonica", serif;
+    }
+    .mSearch_close_icon {
+        display: none;
+    }
+    .mHeader_search_open .mSearch_close_icon {
+        display: block;
+    }
+    .mHeader_search_open .mSearch_open_icon {
+        display: none;
+    }
+    .menu {
+        min-width: 203.36px;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        transition: left 0.3s ease-in-out;
+        z-index: 1;
+        padding-block: 21px;
+        padding-inline: 15.36px;
+        gap: 42px;
+    }
+    .menu_open {
+        left: 0;
+    }
+    .menu_close {
+        display: flex;
+        margin-bottom: 42px;
+    }
+    .menu_title {
+        display: none;
+    }
+    .menu_search {
+        display: none;
+    }
+
+    .mHeader_search_open .menu_search {
+        display: flex;
+        margin-bottom: 0;
+    }
+    .note {
+        margin-top: 35px;
+    }
+}

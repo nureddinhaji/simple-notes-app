@@ -1,0 +1,72 @@
+/* ADD NOTE CSS */
+
+.note {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin-top: 114px;
+    padding-inline: 30px;
+    padding-bottom: 30px;
+}
+
+.add_note {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+}
+.add_note_title {
+    color: var(--dark-text-color);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 31px;
+}
+
+.add_note_fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--light-text-color);
+}
+
+.add_note_input {
+    background-color: var(--background-color);
+    border-radius: 7px;
+    height: 45px;
+    padding: 10px 20px ;
+}
+
+.add_note_textarea {
+    background-color: var(--background-color);
+    border-radius: 7px;
+    height: 150px;
+    padding: 10px 20px;
+    resize: vertical;
+}
+
+.add_note_btn {
+    padding: 10px 22px;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 5px;
+    transition: opacity 0.3s;
+}
+
+.add_note_btn:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+
+@media (max-width: 980px) {
+    .note {
+        margin-top: 50px;
+    }
+    .add_note_actions {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
