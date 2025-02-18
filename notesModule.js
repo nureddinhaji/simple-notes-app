@@ -58,6 +58,6 @@ export function search(searchForm) {
     let searchInput = searchForm.querySelector(".menu_search_input");
     let searchValue = searchInput.value;
     if (searchValue) {
-        window.location.href = `/search.html?q=${searchValue}`;
+        window.location.href = `search.html?q=${searchValue}`;
     }
 }

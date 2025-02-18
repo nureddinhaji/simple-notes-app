@@ -36,7 +36,7 @@ function addNote(noteType) {
 
     notesList.push(note);
     localStorage.setItem(noteType, JSON.stringify(notesList));
-    window.location.href = `/note.html?id=${notesList.length}&type=${noteType}`;
+    window.location.href = `note.html?id=${notesList.length}&type=${noteType}`;
 }
 
 
