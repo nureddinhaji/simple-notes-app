@@ -7,7 +7,7 @@ export function deleteNote(noteIndex, type) {
         const currentList = type === "notes" ? notesList : pinnedNotesList;
         currentList.splice(noteIndex, 1);
         localStorage.setItem(type, JSON.stringify(currentList));
-        window.location.href = "/";
+        window.location.href = "index.html";
     }
 }
 
