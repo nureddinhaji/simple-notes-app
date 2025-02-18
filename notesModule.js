@@ -28,7 +28,7 @@ export function getNoteHtml(note, index, type) {
     const notSummary = note.content.split(" ").slice(0, 18).join(" ");
     return `
     <li class="notes_item">
-        <a class="notes_item_title" href="/note.html?id=${index + 1}&type=${type}">${note.title}</a>
+        <a class="notes_item_title" href="note.html?id=${index + 1}&type=${type}">${note.title}</a>
         <p class="notes_item_desc">${notSummary}...</p>
         <div class="notes_item_footer">
             <span class="notes_item_date">${note.date}</span>
